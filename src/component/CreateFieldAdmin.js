@@ -24,7 +24,7 @@ export default function CreateFieldAdmin({ user }) {
       .catch((err) => console.error("Lỗi load loại sân:", err));
 
     axios.get("/auth/users?role=manager", {
-         headers: { Authorization: `Bearer ${user.token}` },
+      headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => setOwners(res.data))
       .catch((err) => console.error("Lỗi load chủ sân:", err));
@@ -42,7 +42,7 @@ export default function CreateFieldAdmin({ user }) {
     for (const file of files) {
       const data = new FormData();
       data.append("image", file);
-      const res = await axios.post("http://localhost:3000/upload", data, {
+      const res = await axios.post("https://sansieutoc-web-be.onrender.com/upload", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (res.data.imageUrl) uploadedUrls.push(res.data.imageUrl);

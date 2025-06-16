@@ -64,7 +64,7 @@ export default function EditField({ user }) {
       const formData = new FormData();
       formData.append("image", file);
 
-      const res = await axios.post("http://localhost:3000/upload", formData, {
+      const res = await axios.post("https://sansieutoc-web-be.onrender.com/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

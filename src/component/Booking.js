@@ -70,7 +70,7 @@ const Booking = () => {
   useEffect(() => {
     if (!fieldId || !formData.date) return;
     axios
-      .get(`http://localhost:3000/booking`)
+      .get(`https://sansieutoc-web-be.onrender.com//booking`)
       .then((res) => setBookedSlots(res.data.bookings || []))
       .catch(() => setBookedSlots([]));
   }, [fieldId, formData.date]);
