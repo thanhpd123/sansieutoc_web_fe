@@ -99,11 +99,11 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("/type")
+      .get("https://sansieutoc-web-be.onrender.com/type")
       .then((res) => setLoaiSans(res.data))
       .catch(console.error);
     axios
-      .get("/field")
+      .get("https://sansieutoc-web-be.onrender.com/field")
       .then((res) => setFields(res.data))
       .catch(console.error);
   }, []);

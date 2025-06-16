@@ -14,7 +14,7 @@ const OwnerFields = ({ user }) => {
 
     const fetchFields = async () => {
       try {
-        const res = await axios.get("/field/owner", {
+        const res = await axios.get("https://sansieutoc-web-be.onrender.com/field/owner", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setFields(res.data);
@@ -39,7 +39,7 @@ const OwnerFields = ({ user }) => {
   const handleDeleteClick = async (id) => {
     if (!window.confirm("Bạn có chắc chắn muốn xoá sân này?")) return;
     try {
-      await axios.delete(`/field/${id}`, {
+      await axios.delete(`https://sansieutoc-web-be.onrender.com/field/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setFields(fields.filter((f) => f._id !== id));

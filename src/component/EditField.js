@@ -22,7 +22,7 @@ export default function EditField({ user }) {
     if (!user) return;
 
     axios
-      .get(`/field/${id}`, {
+      .get(`https://sansieutoc-web-be.onrender.com/field/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -46,7 +46,7 @@ export default function EditField({ user }) {
 
   useEffect(() => {
     axios
-      .get("/type")
+      .get("https://sansieutoc-web-be.onrender.com/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi khi load types:", err));
   }, []);
@@ -113,7 +113,7 @@ export default function EditField({ user }) {
         pricePerHour: parseInt(formData.pricePerHour),
       };
 
-      await axios.put(`/field/${id}`, payload, {
+      await axios.put(`https://sansieutoc-web-be.onrender.com/field/${id}`, payload, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
 

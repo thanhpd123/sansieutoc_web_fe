@@ -122,7 +122,7 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.post("/auth/register", {
+      const response = await axios.post("https://sansieutoc-web-be.onrender.com/auth/register", {
         name,
         email,
         password,

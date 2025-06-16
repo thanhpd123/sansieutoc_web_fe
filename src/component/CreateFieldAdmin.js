@@ -19,11 +19,11 @@ export default function CreateFieldAdmin({ user }) {
   });
 
   useEffect(() => {
-    axios.get("/type")
+    axios.get("https://sansieutoc-web-be.onrender.com/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi load loại sân:", err));
 
-    axios.get("/auth/users?role=manager", {
+    axios.get("https://sansieutoc-web-be.onrender.com/auth/users?role=manager", {
       headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => setOwners(res.data))
@@ -71,7 +71,7 @@ export default function CreateFieldAdmin({ user }) {
         ...formData,
         pricePerHour: parseInt(formData.pricePerHour),
       };
-      await axios.post("/field", payload, {
+      await axios.post("https://sansieutoc-web-be.onrender.com/field", payload, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       alert("Tạo sân thành công!");

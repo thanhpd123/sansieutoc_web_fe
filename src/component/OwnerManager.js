@@ -12,7 +12,7 @@ const OwnerManager = ({ user }) => {
 
   useEffect(() => {
     axios
-      .get("/auth/users?role=manager", {
+      .get("https://sansieutoc-web-be.onrender.com/auth/users?role=manager", {
         headers: { Authorization: `Bearer ${user.token}` },
       })
       .then((res) => {

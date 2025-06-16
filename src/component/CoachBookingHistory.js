@@ -10,9 +10,9 @@ const CoachBookingHistory = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('/coachbooking/user', {
+        const response = await axios.get('https://sansieutoc-web-be.onrender.com/coachbooking/user', {
           headers: {
-           Authorization: `Bearer ${JSON.parse(localStorage.getItem('userData'))?.token}`,
+            Authorization: `Bearer ${JSON.parse(localStorage.getItem('userData'))?.token}`,
 
           },
         });
@@ -56,11 +56,11 @@ const CoachBookingHistory = () => {
               <p><strong>Ngày:</strong> {new Date(booking.date).toLocaleDateString()}</p>
               <p><strong>Thời gian:</strong> {booking.startTime} - {booking.endTime}</p>
               <p><strong>Giá:</strong> {booking.totalPrice.toLocaleString()}đ</p>
-              <p><strong>Trạng thái:</strong> 
+              <p><strong>Trạng thái:</strong>
                 <span className={
                   booking.status === 'pending' ? 'text-yellow-500' :
-                  booking.status === 'confirmed' ? 'text-green-600' :
-                  'text-red-500'
+                    booking.status === 'confirmed' ? 'text-green-600' :
+                      'text-red-500'
                 }>
                   {' '}{booking.status}
                 </span>
@@ -74,4 +74,4 @@ const CoachBookingHistory = () => {
 };
 
 export default CoachBookingHistory;
-  
+

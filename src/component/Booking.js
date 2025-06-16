@@ -49,7 +49,7 @@ const Booking = () => {
   useEffect(() => {
     const fetchField = async () => {
       try {
-        const res = await axios.get(`/field/${fieldId}`);
+        const res = await axios.get(`https://sansieutoc-web-be.onrender.com/field/${fieldId}`);
         setField(res.data);
       } catch (err) {
         setMessage("Không tìm thấy thông tin sân.");
@@ -62,7 +62,7 @@ const Booking = () => {
 
   useEffect(() => {
     axios
-      .get(`/fieldunit/`)
+      .get(`https://sansieutoc-web-be.onrender.com/fieldunit/`)
       .then((res) => setFieldUnits(res.data))
       .catch(() => setFieldUnits([]));
   }, []);
@@ -194,7 +194,7 @@ const Booking = () => {
       });
 
       for (const payload of bookings) {
-        await axios.post("/booking", payload, {
+        await axios.post("https://sansieutoc-web-be.onrender.com/booking", payload, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
       }

@@ -16,7 +16,7 @@ const RevenueByField = ({ token, userId, startDate, endDate }) => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get(`/report/field`, {
+        const res = await axios.get(`https://sansieutoc-web-be.onrender.com/report/field`, {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             ownerId: userId,
@@ -24,7 +24,7 @@ const RevenueByField = ({ token, userId, startDate, endDate }) => {
             ...(endDate && { to: endDate }),
           },
         });
-         console.log("API response:", res.data);  
+        console.log("API response:", res.data);
         setData(res.data || []);
       } catch (err) {
         console.error("Lỗi khi gọi API doanh thu theo sân:", err);

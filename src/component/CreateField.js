@@ -18,7 +18,7 @@ export default function CreateField({ user }) {
 
   useEffect(() => {
     axios
-      .get("/type")
+      .get("https://sansieutoc-web-be.onrender.com/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi load loại sân:", err));
   }, []);
@@ -72,7 +72,7 @@ export default function CreateField({ user }) {
         pricePerHour: parseInt(formData.pricePerHour),
       };
 
-      await axios.post("/field", payload);
+      await axios.post("https://sansieutoc-web-be.onrender.com/field", payload);
       alert("Tạo sân thành công!");
       navigate("/manager/fields");
     } catch (err) {
