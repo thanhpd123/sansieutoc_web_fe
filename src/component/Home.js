@@ -133,13 +133,13 @@ export default function Home() {
   }, [fields, filterType, filterName, filterArea]);
 
   // Sử dụng filteredFields để lấy các sân phổ biến
-  const footballField = filteredFields.find(
+  const footballField = (Array.isArray(filteredFields) ? filteredFields : []).find(
     (f) => f.type?.name?.toLowerCase() === "bóng đá"
   );
-  const basketballField = filteredFields.find(
+  const basketballField = (Array.isArray(filteredFields) ? filteredFields : []).find(
     (f) => f.type?.name?.toLowerCase() === "bóng rổ"
   );
-  const tennisField = filteredFields.find(
+  const tennisField = (Array.isArray(filteredFields) ? filteredFields : []).find(
     (f) => f.type?.name?.toLowerCase() === "tennis"
   );
 
