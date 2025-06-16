@@ -1,0 +1,94 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient nền chính -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C851;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00FF41;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient cho text chính -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient cho số phần trăm -->
+    <linearGradient id="percentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Nền chính -->
+  <rect width="800" height="400" fill="url(#mainGradient)" rx="15"/>
+  
+  <!-- Hiệu ứng ánh sáng -->
+  <circle cx="700" cy="100" r="150" fill="rgba(255,255,255,0.1)" opacity="0.6"/>
+  <circle cx="100" cy="300" r="100" fill="rgba(255,255,255,0.08)" opacity="0.4"/>
+  
+  <!-- Hình tia sét trang trí -->
+  <path d="M120 80 L140 120 L125 120 L135 160 L110 120 L125 120 Z" fill="#FFD700" filter="url(#glow)"/>
+  <path d="M680 280 L700 320 L685 320 L695 360 L670 320 L685 320 Z" fill="#FFD700" filter="url(#glow)"/>
+  
+  <!-- Text chính "KHUYẾN MÃI ĐẶC BIỆT" -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="url(#textGradient)" filter="url(#shadow)">
+    KHUYẾN MÃI ĐẶC BIỆT
+  </text>
+  
+  <!-- Dòng phụ -->
+  <text x="400" y="115" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="rgba(255,255,255,0.9)">
+    ⚡ SĂNG SIÊU TỐC - GIẢM SIÊU SỐC ⚡
+  </text>
+  
+  <!-- Số phần trăm lớn -->
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="url(#percentGradient)" filter="url(#shadow)">
+    50%
+  </text>
+  
+  <!-- Text "GIẢM GIÁ" -->
+  <text x="400" y="235" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white" filter="url(#shadow)">
+    GIẢM GIÁ
+  </text>
+  
+  <!-- Thông tin chi tiết -->
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="rgba(255,255,255,0.95)">
+    Áp dụng cho tất cả sản phẩm trong tháng 6
+  </text>
+  
+  <!-- Nút call-to-action -->
+  <rect x="300" y="310" width="200" height="50" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2" rx="25" filter="url(#shadow)"/>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    MUA NGAY
+  </text>
+  
+  <!-- Các hình trang trí -->
+  <circle cx="650" cy="150" r="4" fill="#FFD700" opacity="0.8"/>
+  <circle cx="150" cy="200" r="3" fill="#FFD700" opacity="0.6"/>
+  <circle cx="700" cy="200" r="5" fill="white" opacity="0.4"/>
+  <circle cx="100" cy="150" r="2" fill="white" opacity="0.7"/>
+  
+  <!-- Hiệu ứng lấp lánh -->
+  <g opacity="0.8">
+    <polygon points="200,50 205,60 215,60 207,68 210,78 200,73 190,78 193,68 185,60 195,60" fill="#FFD700"/>
+    <polygon points="600,350 605,360 615,360 607,368 610,378 600,373 590,378 593,368 585,360 595,360" fill="white"/>
+    <polygon points="80,250 85,260 95,260 87,268 90,278 80,273 70,278 73,268 65,260 75,260" fill="#FFD700"/>
+  </g>
+  
+  <!-- Border trang trí -->
+  <rect x="5" y="5" width="790" height="390" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" rx="12"/>
+</svg>

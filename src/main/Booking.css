@@ -1,0 +1,293 @@
+/* ../main/Booking.css */
+
+/* --- Biến màu chủ đạo Xanh Dương --- */
+:root {
+  --primary-blue: #2563eb;         /* Xanh dương chính (tương tự Tailwind blue-600) */
+  --primary-blue-dark: #1d4ed8;    /* Xanh đậm hơn cho hover (tương tự blue-700) */
+  --primary-blue-light: #60a5fa;   /* Xanh nhạt hơn */
+  --light-blue-bg: #eff6ff;       /* Xanh rất nhạt cho nền (tương tự blue-50) */
+  --light-blue-interactive: #dbeafe; /* Xanh cho tương tác nhẹ (tương tự blue-100) */
+  --border-blue: #93c5fd;         /* Màu viền xanh (tương tự blue-300) */
+  --text-on-blue: #ffffff;        /* Chữ trắng trên nền xanh */
+  --text-primary: #1f2937;        /* Màu chữ chính (xám đậm) */
+  --text-secondary: #4b5563;      /* Màu chữ phụ (xám vừa) */
+  --success-green: #10b981;       /* Xanh lá cây cho thành công */
+  --success-green-dark: #059669;  /* Xanh lá cây đậm hơn cho hover */
+  --error-red: #ef4444;           /* Đỏ cho lỗi (Tailwind red-500) */
+  --error-red-bg: #fee2e2;        /* Nền đỏ nhạt cho lỗi */
+  --page-bg: #f0f9ff;             /* Nền toàn trang - xanh rất nhạt */
+  --container-bg: #ffffff;        /* Nền container chính - trắng */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-light: rgba(var(--primary-blue-rgb, 37, 99, 235), 0.25); /* Cho focus shadow */
+  --primary-blue-rgb: 37, 99, 235; /* Giá trị RGB của var(--primary-blue) */
+}
+
+/* --- Kiểu dáng chung cho trang --- */
+/* Nếu bạn muốn toàn bộ trang có nền xanh nhạt, bạn có thể thêm class này vào thẻ body hoặc một div bao ngoài cùng */
+.booking-page-background {
+  background-color: var(--page-bg);
+  min-height: 100vh;
+  padding: 20px 0; /* Thêm padding cho trang */
+}
+
+/* --- Container chính của component Booking --- */
+.booking-container {
+  max-width: 672px; /* tương đương max-w-xl */
+  margin: 40px auto; /* Canh giữa và thêm khoảng cách trên dưới */
+  padding: 28px;
+  background-color: var(--container-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  color: var(--text-primary);
+  border: 1px solid #e5e7eb; /* Viền nhẹ cho container */
+}
+
+/* --- Tiêu đề và Văn bản --- */
+.booking-container h1 {
+  font-size: 2rem; /* Lớn hơn một chút */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--primary-blue);
+  text-align: center; /* Canh giữa tiêu đề */
+  padding-bottom: 0.5rem;
+  /* border-bottom: 2px solid var(--primary-blue-light); */
+}
+
+.booking-field-address {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.booking-field-price {
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue-dark);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.booking-user-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: var(--light-blue-bg);
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-blue);
+}
+
+/* --- Kiểu dáng Form --- */
+.booking-form {
+  border: 1px solid var(--border-blue);
+  padding: 24px;
+  border-radius: 8px;
+  background-color: var(--light-blue-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0, 0.05);
+}
+
+.booking-form > div:not(:last-of-type), /* Áp dụng cho các div con trực tiếp, trừ cái cuối cùng */
+.booking-form input[type="date"] {
+    margin-bottom: 1.25rem; /* space-y-ish */
+}
+
+.booking-form input[type="date"] {
+  width: 100%;
+  border: 1px solid var(--border-blue);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background-color: #fff;
+  color: var(--text-primary);
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.booking-form input[type="date"]:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px var(--shadow-color-light);
+  outline: none;
+}
+
+.booking-form .form-section-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary-blue-dark);
+  font-size: 1.05rem;
+}
+
+/* --- Nút chọn thời gian --- */
+.time-slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.time-slot-button {
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-blue);
+  background-color: #fff;
+  color: var(--primary-blue);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+  flex-grow: 1; /* Cho các nút giãn đều */
+  text-align: center;
+  min-width: 70px; /* Chiều rộng tối thiểu */
+}
+
+.time-slot-button:hover {
+  background-color: var(--light-blue-interactive);
+  border-color: var(--primary-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.time-slot-button.selected-start {
+  background-color: var(--primary-blue);
+  color: var(--text-on-blue);
+  border-color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.time-slot-button.selected-end {
+  background-color: var(--success-green); /* Giữ màu xanh lá cho nút kết thúc như gốc */
+  /* Hoặc đổi sang màu xanh dương khác nếu muốn đồng bộ hoàn toàn:
+  background-color: var(--primary-blue-light);
+  border-color: var(--primary-blue-light);
+  */
+  color: var(--text-on-blue);
+  border-color: var(--success-green);
+  font-weight: 700;
+}
+
+/* --- Hiển thị Tổng tiền --- */
+.total-price-section .form-section-title { /* CSS cho "Tổng tiền (VNĐ):" */
+  font-weight: 600;
+  color: var(--primary-blue-dark);
+  margin-bottom: 0.25rem;
+}
+
+.total-price-display {
+  padding: 0.8rem 1rem;
+  border: 1px dashed var(--border-blue); /* Viền nét đứt */
+  border-radius: 6px;
+  background-color: #fff; /* Nền trắng để nổi bật */
+  color: var(--primary-blue-dark);
+  font-weight: 700; /* Chữ đậm hơn */
+  font-size: 1.1rem;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Nút Gửi Form (Đặt sân) --- */
+.submit-booking-button {
+  background-color: var(--primary-blue);
+  color: var(--text-on-blue);
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 100%; /* Trải rộng toàn bộ */
+  margin-top: 0.5rem; /* Thêm khoảng cách với phần tử trên */
+}
+
+.submit-booking-button:hover {
+  background-color: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(var(--primary-blue-rgb, 37, 99, 235), 0.3);
+}
+ .submit-booking-button:disabled {
+   background-color: var(--border-blue);
+   cursor: not-allowed;
+ }
+
+/* --- Thông báo Đăng nhập --- */
+.login-prompt-container {
+  background-color: var(--light-blue-bg);
+  border-left: 4px solid var(--primary-blue);
+  color: var(--primary-blue-dark);
+  padding: 1.25rem; /* Tăng padding */
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.login-prompt-container .font-semibold {
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* Thêm khoảng cách cho nút */
+}
+
+.login-prompt-button {
+  margin-top: 0.75rem;
+  color: var(--primary-blue);
+  text-decoration: none; /* Bỏ gạch chân mặc định, thêm khi hover */
+  background: none;
+  border: 1px solid var(--primary-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block; /* Để padding có tác dụng đúng */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.login-prompt-button:hover {
+  background-color: var(--primary-blue);
+  color: var(--text-on-blue);
+  text-decoration: none;
+}
+
+/* --- Thông báo Chung (Loading, Lỗi) --- */
+.loading-message,
+.error-message-field,
+.form-submission-message {
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.loading-message {
+  color: var(--text-secondary);
+  background-color: var(--light-blue-bg);
+  border: 1px solid var(--border-blue);
+}
+
+.error-message-field {
+  color: var(--error-red);
+  background-color: var(--error-red-bg);
+  border: 1px solid var(--error-red);
+}
+
+.form-submission-message { /* Kiểu chung cho thông báo sau khi submit */
+  border-width: 1px;
+  border-style: solid;
+}
+
+.form-submission-message.success {
+  background-color: #e6fffa; /* Nền xanh lá nhạt */
+  color: #047857; /* Chữ xanh lá đậm */
+  border-color: #5eead4; /* Viền xanh lá */
+}
+
+.form-submission-message.error {
+  background-color: var(--error-red-bg);
+  color: var(--error-red);
+  border-color: #fca5a5; /* Viền đỏ nhạt */
+}
+
+.form-submission-message.warning { /* Dùng cho "Bạn cần đăng nhập" nếu nó là form message */
+  background-color: var(--light-blue-interactive);
+  color: var(--primary-blue-dark);
+  border-color: var(--primary-blue);
+}

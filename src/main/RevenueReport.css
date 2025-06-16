@@ -1,0 +1,79 @@
+.tab-strip {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.date-picker-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #ffcc00;
+  border: 2px solid #000;
+}
+
+.revenue-table-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.revenue-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.revenue-table th,
+.revenue-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.revenue-table th {
+  background-color: #f0f0f0;
+}
+
+
+.yellow-strip {
+  background-color: #f7b30c; /* Màu vàng cam từ ảnh */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  padding: 25px 0; /* Giữ padding để duy trì chiều cao của thanh */
+
+  /* ===== Các thuộc tính để thanh này luôn dính ở đầu ===== */
+  position: sticky; /* Rất quan trọng: cho phép nó dính */
+  top: 60px; /* Rất quan trọng: Dính ngay dưới navbar. Thay đổi giá trị này bằng chiều cao của navbar */
+  z-index: 999; /* Đảm bảo nó nằm dưới navbar nhưng trên các nội dung khác */
+  /* ======================================================= */
+
+  display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn */
+}
+
+/* Container cho các liên kết loại sân */
+.loaisan-nav {
+  display: flex; /* Các liên kết nằm trên một hàng */
+  gap: 60px; /* Giữ nguyên khoảng cách giữa các mục */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Đảm bảo không có dấu chấm nếu là ul/li */
+}

@@ -1,0 +1,51 @@
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-table thead {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+}
+
+.schedule-table tr:hover {
+  background-color: #fafafa;
+}
+
+.status-pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.status-confirmed {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-cancelled {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Đảm bảo khung chứa rộng rãi */
+.fields-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

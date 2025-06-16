@@ -1,0 +1,583 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* chiều cao navbar */
+  background-color: #0c760c;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.content-wrapper {
+  padding-top: 60px; /* cùng bằng chiều cao navbar */
+}
+.ten{
+  text-align: center;
+  font-size: 45px;
+}
+
+/* Các style còn lại như loaisan-container, loaisan-grid, loaisan-item bạn giữ nguyên */
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo .green-text {
+  color: #aaff00;
+  margin-right: 0.25rem;
+  text-shadow: 0 0 5px #aaff00;
+}
+
+.logo .white-text {
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.auth-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.auth-button {
+  background-color: white;
+  color: black;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  border: none;
+  margin-right: 50px;
+}
+
+.auth-button:hover {
+  background-color: #e5e7eb;
+}
+
+.search-input {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+}
+
+.yellow {
+  background-color: #f59e0b; /* bg-yellow-500 */
+  height: 1.25rem;
+  width: 100%;
+}
+
+/* Reset margin, padding để đảm bảo không gian trống */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero tràn full ngang */
+.hero {
+  position: relative;
+  width: 100vw;      /* full chiều ngang viewport */
+  height: 500px;
+  background-image: url('https://gcs.tripi.vn/public-tripi/tripi-feed/img/473633maj/-1063004.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  overflow: hidden; /* tránh ảnh tràn ra ngoài */
+  box-sizing: border-box;
+  margin: 0; /* loại bỏ margin */
+  left: 0; /* chắc chắn không lệch */
+  right: 0;
+}
+
+/* Lớp phủ đen mờ */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.7); /* đen mờ */
+  z-index: 0;
+  pointer-events: none; /* tránh chắn event */
+}
+
+/* Đảm bảo nội dung nằm trên lớp phủ */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.hero p .bold {
+  font-weight: bold;
+}
+
+
+.search-bar {
+  background-color: white;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 64rem;
+  display: flex;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.search-bar select,
+.search-bar input {
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar select {
+  width: 25%;
+  border-right: 1px solid #d1d5db;
+}
+
+.search-bar input:nth-child(2) {
+  width: 50%;
+}
+
+.search-bar input:nth-child(3) {
+  width: 25%;
+  border-left: 1px solid #d1d5db;
+}
+
+.search-bar button {
+  background-color: #166534; /* tương đương bg-green-600 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #14532d; /* hover:bg-green-700 */
+}
+.loaisan-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.loaisan-grid {
+  display: flex;
+  justify-content: space-evenly; /* Giãn đều, khoảng cách lớn hơn */
+  flex-wrap: nowrap; /* Không xuống hàng */
+  gap: 40px; /* Tăng khoảng cách giữa các item */
+}
+
+.loaisan-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loaisan-grid {
+  display: flex;
+  justify-content: space-between; /* giãn hết 2 bên */
+  flex-wrap: nowrap; /* 1 hàng */
+}
+
+.loaisan-item {
+  flex: 1 1 0;          /* mỗi item chiếm không gian bằng nhau */
+  max-width: 180px;     /* giới hạn tối đa để không quá to */
+  margin: 0 10px;       /* khoảng cách 2 bên */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+
+  box-shadow: 0 0 15px 4px rgba(6, 243, 34, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.loaisan-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.loaisan-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.loaisan-item h3 {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+/* --- Sân Phổ Biến Section (Tên mới: fields-popular-container) --- */
+.fields-popular-container {
+    padding: 50px; /* ĐÃ CHỈNH SỬA: Tăng padding đều các phía để giãn ra hai bên */
+    background-color: #f5f5f5;
+    min-height: auto;
+    box-sizing: border-box;
+}
+
+.fields-popular-container h1 { /* Tiêu đề "Sân phổ biến" */
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: left; /* Căn lề trái giống hình */
+    padding-left: 16px; /* Căn chỉnh với thẻ */
+}
+
+.fields-grid { /* Đổi tên từ fields-list để tránh nhầm lẫn */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ chỗ */
+    justify-content: center; /* Căn giữa các thẻ trong hàng */
+    gap: 30px; /* GIỮ NGUYÊN HOẶC ĐIỀU CHỈNH KHOẢNG CÁCH GIỮA CÁC THẺ */
+    /* ĐÃ CHỈNH SỬA: Đảm bảo đủ không gian cho các thẻ rộng hơn */
+    max-width: 1150px; /* (3 * 350px) + (2 * 20px gap) = 1090px. Thêm một chút để dự phòng */
+    margin: 20px auto; /* Căn giữa toàn bộ lưới */
+}
+
+/* --- FieldCard Styles --- */
+.field-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* ĐÃ CHỈNH SỬA: Chiều rộng thẻ lớn hơn */
+    margin: 0;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.field-card:hover {
+    transform: translateY(-5px);
+}
+
+.field-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.field-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    color: #888;
+    font-style: italic;
+}
+
+.field-type-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.field-info {
+    padding: 16px;
+    background-color: #fcf8e3; /* Màu vàng nhạt giống hình */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.field-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 8px;
+}
+
+.field-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Giữ tên sân trên một dòng */
+}
+
+.field-location {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: auto; /* Đẩy địa chỉ xuống cuối phần info */
+}
+
+.location-icon {
+    width: 16px;
+    height: 16px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1180px) { /* ĐÃ CHỈNH SỬA: Điều chỉnh breakpoint cho 3 thẻ (1090px + thêm 90px dự phòng) */
+    .fields-grid {
+        max-width: 750px; /* ĐÃ CHỈNH SỬA: 2 * 350px + 1 * 20px gap = 720px. Thêm một chút dự phòng */
+    }
+}
+
+@media (max-width: 780px) { /* ĐÃ CHỈNH SỬA: Điều chỉnh breakpoint cho 2 thẻ */
+    .fields-grid {
+        max-width: 350px; /* 1 * 350px */
+        justify-content: center;
+        padding: 0;
+    }
+    .field-card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+    .fields-popular-container {
+        padding: 30px 10px;
+    }
+    .fields-popular-container h1 {
+        font-size: 2em;
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... (các style responsive khác) ... */
+}
+
+.btn-dat-san {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* xanh lá */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-dat-san:hover {
+    background-color: #45a049;
+}
+/* --- Footer Styles --- */
+.main-footer {
+    background-color: #0c760c; /* Màu xanh lá đậm như hình */
+    color: white;
+    padding: 25px 20px; /* ĐÃ CHỈNH SỬA: Giảm padding trên dưới để thu ngắn chiều cao */
+    font-family: Arial, sans-serif;
+    font-size: 0.95em; /* Kích thước font tổng thể nhỏ hơn một chút */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* ĐÃ CHỈNH SỬA: Dùng space-between để dãn các cột ra hai bên tối đa */
+    max-width: 1280px; /* ĐÃ CHỈNH SỬA: Tăng max-width để cho phép giãn rộng hơn */
+    margin: 0 auto;
+    gap: 20px; /* ĐÃ CHỈNH SỬA: Khoảng cách giữa các cột khi xuống dòng */
+}
+
+.footer-column {
+    /* ĐÃ CHỈNH SỬA: Sử dụng flex-basis để kiểm soát chiều rộng cột */
+    flex-basis: 22%; /* Mỗi cột chiếm khoảng 22% chiều rộng của footer-content */
+    min-width: 200px; /* ĐÃ CHỈNH SỬA: Giảm min-width một chút để linh hoạt hơn */
+    margin: 0; /* ĐÃ CHỈNH SỬA: Bỏ margin cũ, dùng gap của footer-content */
+    padding: 10px 0; /* Padding nhẹ cho nội dung cột */
+}
+
+.footer-column h3 {
+    font-size: 1.2em; /* ĐÃ CHỈNH SỬA: Nhỏ hơn một chút */
+    margin-bottom: 15px; /* ĐÃ CHỈNH SỬA: Giảm margin-bottom */
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* ĐÃ CHỈNH SỬA: Dãn chữ tiêu đề */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px; /* ĐÃ CHỈNH SỬA: Giảm margin-bottom */
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em; /* ĐÃ CHỈNH SỬA: Nhỏ hơn một chút */
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px; /* ĐÃ CHỈNH SỬA: Dãn chữ các liên kết */
+}
+
+.footer-column ul li a:hover {
+    color: #4ae84f; /* Màu xanh lá cây khi hover */
+}
+
+.footer-column p {
+    font-size: 0.9em; /* ĐÃ CHỈNH SỬA: Nhỏ hơn một chút */
+    line-height: 1.4; /* ĐÃ CHỈNH SỬA: Điều chỉnh line-height */
+    margin-bottom: 8px; /* ĐÃ CHỈNH SỬA: Giảm margin-bottom */
+    letter-spacing: 0.2px; /* ĐÃ CHỈNH SỬA: Dãn chữ các đoạn văn bản */
+}
+
+.footer-column.last-column .contact-text {
+    margin-bottom: 15px; /* ĐÃ CHỈNH SỬA: Giảm margin-bottom */
+}
+
+.social-icons {
+    margin-top: 15px; /* ĐÃ CHỈNH SỬA: Giảm margin-top */
+    display: flex;
+    gap: 12px; /* ĐÃ CHỈNH SỬA: Giảm khoảng cách giữa các icon */
+}
+
+.social-icon img {
+    width: 24px; /* ĐÃ CHỈNH SỬA: Kích thước icon nhỏ hơn */
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.footer-logo {
+    max-width: 180px; /* ĐÃ CHỈNH SỬA: Logo nhỏ hơn một chút */
+    height: auto;
+    margin-top: 15px; /* ĐÃ CHỈNH SỬA: Giảm margin-top */
+    display: block;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 1024px) { /* ĐIỀU CHỈNH: Breakpoint để chuyển từ 4 cột sang 2 cột */
+    .footer-column {
+        flex-basis: 45%; /* Mỗi cột chiếm khoảng 45% để tạo 2 cột */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 20px 15px; /* Padding nhỏ hơn trên mobile */
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* Bỏ gap khi stack cột */
+    }
+
+    .footer-column {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px; /* ĐÃ CHỈNH SỬA: Khoảng cách giữa các cột khi stack */
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column h3 {
+        font-size: 1.1em;
+    }
+    .footer-column ul li a,
+    .footer-column p {
+        font-size: 0.85em;
+    }
+    .footer-logo {
+        max-width: 150px;
+    }
+    
+}

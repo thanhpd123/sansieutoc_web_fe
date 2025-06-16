@@ -1,0 +1,84 @@
+.field-table {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.field-table-header,
+.field-table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 3fr 1fr;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.field-table-header {
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+.status-toggle {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.status-toggle.active {
+  background-color: #4caf50;
+}
+
+.status-toggle.pending {
+  background-color: #ff9800;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.page-button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.field-list-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.add-button {
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-input-giant {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}

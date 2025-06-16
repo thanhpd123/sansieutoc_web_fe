@@ -1,0 +1,98 @@
+/* Cấu trúc layout toàn trang */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.font-sans {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Đảm bảo footer không bị đẩy lên */
+.main-footer {
+  background-color: #0c760c;
+  color: #fff;
+  padding: 40px 20px;
+  
+}
+
+.t1{
+    font-size: 50px;
+    margin-left: 50px;
+}
+
+
+/* Thanh màu vàng nằm ngang */
+.yellow-strip {
+  background-color: #f7b30c; /* Màu vàng cam từ ảnh */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  padding: 25px 0; /* Giữ padding để duy trì chiều cao của thanh */
+
+  /* ===== Các thuộc tính để thanh này luôn dính ở đầu ===== */
+  position: sticky; /* Rất quan trọng: cho phép nó dính */
+  top: 60px; /* Rất quan trọng: Dính ngay dưới navbar. Thay đổi giá trị này bằng chiều cao của navbar */
+  z-index: 999; /* Đảm bảo nó nằm dưới navbar nhưng trên các nội dung khác */
+  /* ======================================================= */
+
+  display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn */
+}
+
+/* Container cho các liên kết loại sân */
+.loaisan-nav {
+  display: flex; /* Các liên kết nằm trên một hàng */
+  gap: 60px; /* Giữ nguyên khoảng cách giữa các mục */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Đảm bảo không có dấu chấm nếu là ul/li */
+}
+
+/* Các liên kết loại sân */
+.loaisan-nav a {
+  text-decoration: none; /* Bỏ gạch chân dưới link */
+  color: #2b2b2b; /* Màu chữ gần đen hơn */
+  font-weight: bold; /* Chữ in đậm */
+  font-size: 1.25em; /* Kích thước chữ */
+  white-space: nowrap; /* Ngăn chữ bị xuống dòng */
+
+  letter-spacing: 0.8px; /* Giữ nguyên độ giãn cách chữ */
+
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5); /* Giữ nguyên hiệu ứng bóng đổ cho chữ */
+
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.loaisan-nav a:hover {
+  color: #000; /* Màu chữ đen tuyền khi di chuột qua */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Bóng đổ đậm hơn */
+  transform: translateY(-2px); /* Nhấc nhẹ chữ lên khi hover */
+}
+
+/* Style cho các thông báo loading/error nếu có */
+.loaisan-nav p {
+    color: #2b2b2b;
+    font-weight: bold;
+    font-size: 1.25em;
+    letter-spacing: 0.8px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Đảm bảo phần nội dung chính bên dưới có nền màu xám nhạt như ảnh */
+.content-wrapper {
+    background-color: #e6ede6; /* Màu xám nhạt */
+    /* min-height có thể cần điều chỉnh nếu bạn có thanh footer cố định */
+}
+
+/*
+Để sticky hoạt động tốt, các phần tử cha của .yellow-strip (ví dụ: main hoặc content-wrapper)
+không nên có overflow: hidden, overflow: scroll, hoặc overflow: auto.
+Đảm bảo thẻ body hoặc html có chiều cao đủ lớn (min-height: 100vh).
+*/

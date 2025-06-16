@@ -1,0 +1,86 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.coachInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coachImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.coachName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.specialties {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.details {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.statusPending {
+  color: #d97706; /* amber-600 */
+  font-weight: 600;
+}
+
+.statusConfirmed {
+  color: #059669; /* green-600 */
+  font-weight: 600;
+}
+
+.statusCancelled {
+  color: #dc2626; /* red-600 */
+  font-weight: 600;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  color: #333;
+}
+
+.error {
+  color: #dc2626;
+}

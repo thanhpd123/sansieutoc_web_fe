@@ -1,0 +1,1196 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset & Base */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background: #f5f6fa;
+  color: #222;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Fluid Responsive Container */
+.font-sans {
+  padding-top: 0;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Navbar Premium Fix: màu nền, contrast, padding, border, shadow --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #00c853 60%, #ffd600 100%);
+  /* Khôi phục nền gradient xanh lá - vàng */
+  border-bottom: 2px solid #00c85322;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.07), 0 1.5px 8px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 0 3vw;
+  min-height: 58px;
+  transition: box-shadow 0.22s, background 0.22s, border 0.22s;
+}
+
+.navbar:hover {
+  background: #f8fff8;
+  box-shadow: 0 6px 24px rgba(0, 200, 83, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-bottom: 2.5px solid #00c85344;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.logo .green-text {
+  color: #aaff00;
+  margin-right: 0.25rem;
+  text-shadow: 0 0 5px #aaff00;
+}
+
+.logo .white-text {
+  color: #222;
+  text-shadow: 0 0 5px rgba(170, 255, 0, 0.2);
+}
+
+/* --- Menu: màu chữ, hover, active, padding, border, shadow --- */
+.menu {
+  display: flex;
+  gap: 1.2rem;
+  font-weight: 500;
+  font-size: 1.08rem;
+  align-items: center;
+}
+
+.menu a {
+  color: #222;
+  text-decoration: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.9rem;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.1px;
+  background: transparent;
+  transition:
+    color 0.18s cubic-bezier(.4, 2, .6, 1),
+    background 0.18s cubic-bezier(.4, 2, .6, 1),
+    box-shadow 0.18s cubic-bezier(.4, 2, .6, 1),
+    transform 0.13s cubic-bezier(.4, 2, .6, 1);
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #00c853 60%, #ffd600 100%);
+  border-radius: 2px;
+  transition: width 0.22s cubic-bezier(.4, 2, .6, 1), left 0.22s cubic-bezier(.4, 2, .6, 1);
+  z-index: 2;
+}
+
+.menu a:hover::before,
+.menu a.active::before {
+  width: 100%;
+  left: 0;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #fff;
+  background: linear-gradient(90deg, #00c853 80%, #ffd600 100%);
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.13);
+  border: 1.5px solid #00c853;
+  transform: scale(1.04);
+}
+
+.menu a:active {
+  background: #00c853;
+  color: #fff;
+  border: 1.5px solid #00c853;
+  transform: scale(0.97);
+}
+
+/* Giảm độ nổi bật của "Trang chủ" khi active */
+.menu a.active {
+  background: linear-gradient(90deg, #00c853 60%, #b6ffb6 100%);
+  color: #fff;
+  border: 1.5px solid #00c853;
+  box-shadow: 0 2px 8px #00c85322;
+  font-weight: 700;
+}
+
+/* --- Responsive Navbar Padding --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    min-height: 52px;
+  }
+
+  .menu {
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 2vw;
+    min-height: 48px;
+  }
+
+  .menu {
+    gap: 0.5rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Auth & Search */
+.auth-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.auth-button {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.08rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c853 70%, #ffd600 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.13), 0 0.5px 2px rgba(0, 0, 0, 0.07);
+  transition: background 0.22s cubic-bezier(.4, 2, .6, 1), transform 0.16s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s cubic-bezier(.4, 2, .6, 1);
+  margin: 0 0.2rem;
+  outline: none;
+  min-width: 110px;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+}
+
+.auth-button:hover {
+  background: linear-gradient(90deg, #009624 70%, #ffd600 100%);
+  color: #fff;
+  transform: translateY(-4px) scale(1.08) rotate(-1deg);
+  box-shadow: 0 8px 32px rgba(0, 200, 83, 0.18), 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.auth-button:active {
+  background: #00c853;
+  color: #fff;
+  transform: scale(0.97);
+}
+
+.user-name {
+  font-weight: 500;
+  color: #00c853;
+  margin-right: 0.5rem;
+}
+
+/* Search Bar */
+.search-bar {
+  background: #fff;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.10);
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1.5px solid #e0e0e0;
+  padding: 0.25rem 0.5rem;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.search-bar select,
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  background: transparent;
+  padding: 0.85rem 1.1rem;
+  transition: background 0.2s;
+}
+
+.search-bar select {
+  width: 22%;
+  border-radius: 1.5rem;
+  background: #f7f7f7;
+  margin-right: 0.5rem;
+}
+
+.search-bar input[type="text"] {
+  flex: 1 1 0;
+  border-radius: 1.5rem;
+  background: #f7f7f7;
+  margin-right: 0.5rem;
+}
+
+.search-bar input[type="text"]:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px #00c85333;
+}
+
+.search-bar button {
+  background: linear-gradient(90deg, #00c853 70%, #ffd600 100%);
+  color: #fff;
+  padding: 0.7rem 2.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(0, 200, 83, 0.13);
+  transition: background 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar button:hover {
+  background: linear-gradient(90deg, #009624 70%, #ffd600 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Gợi ý hiện đại cho input tìm kiếm */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+  z-index: 10;
+  max-height: 220px;
+  overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-suggestion-item {
+  padding: 0.85rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-suggestion-item:hover {
+  background: #f0fff4;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 0;
+  /* reset min-height */
+  height: calc(100vh - 58px);
+  /* chiếm toàn bộ chiều cao trừ navbar */
+  padding-top: 0;
+  padding-bottom: 2.2rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1rem 2.2rem 1rem;
+  margin-top: 0;
+  border-radius: 0 0 2rem 2rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 200, 83, 0.09);
+  z-index: 2;
+  padding-top: 0;
+  animation: fadeInScale 0.7s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: url("data:image/svg+xml;utf8,<svg width='100%' height='48' viewBox='0 0 1440 48' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0C240 48 480 48 720 0C960 -48 1200 -48 1440 0V48H0V0Z' fill='%23fff'/></svg>") no-repeat top center/cover;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.96;
+}
+
+/* Đảm bảo hero nằm dưới navbar, không bị khoảng trắng */
+.font-sans {
+  padding-top: 0 !important;
+}
+
+/* Nếu vẫn còn khoảng trắng, thử thêm: */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Responsive hero sóng */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 180px;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .hero::after {
+    height: 24px;
+    background-size: cover;
+  }
+}
+
+/* Tiêu đề đồng nhất, nổi bật, hiện đại */
+.ten,
+.promo-title,
+.section-title,
+h2,
+h3 {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00c853;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  text-shadow: 0 2px 8px #e0ffe0aa;
+}
+
+.promo-title,
+.section-title {
+  font-size: 1.7rem;
+  color: #009624;
+  margin-bottom: 1.1rem;
+  margin-top: 0;
+  text-shadow: 0 2px 8px #e0ffe077;
+}
+
+/* --- Khuyến mãi: hover ảnh sinh động, hiệu ứng nổi bật --- */
+.promotion-banner img {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.22s cubic-bezier(.4, 2, .6, 1), box-shadow 0.22s cubic-bezier(.4, 2, .6, 1), filter 0.18s;
+  cursor: pointer;
+  filter: brightness(1) drop-shadow(0 2px 8px #ffd60033);
+}
+
+.promotion-banner img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 32px #ffd60055, 0 2px 8px #00c85333;
+  filter: brightness(1.08) drop-shadow(0 6px 16px #ffd60077);
+  animation: promo-shake 0.5s;
+}
+
+@keyframes promo-shake {
+  0% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+
+  20% {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  40% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+
+  60% {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  100% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+}
+
+/* --- Đánh giá người dùng: hover nổi, bóng, scale, avatar động --- */
+.review-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 260px;
+  max-width: 320px;
+  transition: box-shadow 0.18s, transform 0.18s, border 0.18s;
+  border: 1.5px solid #e0ffe0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.review-card:hover {
+  box-shadow: 0 8px 32px #00c85322, 0 2px 8px #ffd60033;
+  border: 1.5px solid #00c853;
+  transform: translateY(-6px) scale(1.04) rotate(-1deg);
+  background: linear-gradient(90deg, #fff 80%, #e0ffe0 100%);
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00c853;
+  transition: box-shadow 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px #00c85322;
+}
+
+.review-card:hover .review-avatar {
+  box-shadow: 0 8px 24px #ffd60044;
+  border-color: #ffd600;
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* --- Ứng dụng Sân Siêu Tốc: hover ảnh, nút, scale, bóng --- */
+.app-feature-content img.app-mockup {
+  width: 180px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.22s cubic-bezier(.4, 2, .6, 1), box-shadow 0.22s cubic-bezier(.4, 2, .6, 1), filter 0.18s;
+  cursor: pointer;
+  filter: brightness(1) drop-shadow(0 2px 8px #00c85333);
+}
+
+.app-feature-content img.app-mockup:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 32px #00c85355, 0 2px 8px #ffd60033;
+  filter: brightness(1.08) drop-shadow(0 6px 16px #00c85377);
+  animation: promo-shake 0.5s;
+}
+
+.app-download-links img {
+  width: 120px;
+  margin-right: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #00c85322;
+  transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
+  cursor: pointer;
+}
+
+.app-download-links img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 8px 24px #ffd60044;
+  filter: brightness(1.08);
+}
+
+/* --- Responsive tiêu đề --- */
+@media (max-width: 600px) {
+
+  .ten,
+  .promo-title,
+  .section-title,
+  h2,
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+}
+
+/* --- Responsive Navbar Padding --- */
+@media (max-width: 1024px) {
+
+  .navbar,
+  .loaisan-container,
+  .fields-popular-container {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .fields-grid,
+  .loaisan-grid {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 2vw;
+  }
+
+  .menu {
+    gap: 1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .auth-search {
+    margin-top: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .loaisan-grid,
+  .fields-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 1.2rem;
+    max-width: 100vw;
+  }
+
+  .search-bar select,
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    margin: 0;
+    border-radius: 1rem;
+  }
+
+  .search-bar button {
+    margin-top: 0.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 1vw;
+  }
+
+  .font-sans {
+    padding-top: 60px;
+  }
+
+  .hero {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    min-height: 220px;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1rem;
+  }
+
+  .loaisan-grid,
+  .fields-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .field-card {
+    min-height: 220px;
+    border-radius: 1rem;
+  }
+
+  .field-image-container {
+    height: 110px;
+  }
+
+  .field-info {
+    padding: 0.7rem 0.7rem 1rem 0.7rem;
+  }
+
+  .btn-dat-san {
+    font-size: 0.98rem;
+    padding: 0.45rem 1rem;
+  }
+
+  .loaisan-item {
+    max-width: 100vw;
+    border-radius: 1rem;
+    padding: 0.8rem 0.5rem 0.7rem 0.5rem;
+  }
+
+  .loaisan-item img {
+    max-width: 90px;
+    height: 60px;
+    border-radius: 0.7rem;
+  }
+}
+
+/* Fields Popular */
+.fields-popular-container {
+  margin: 2.5rem auto 0 auto;
+  max-width: 1200px;
+  padding: 0 2vw;
+}
+
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.2rem;
+}
+
+/* Field Card: hiệu ứng hover sinh động, bóng, scale, border, glow */
+.field-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 200, 83, 0.13), 0 1.5px 8px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.22s, transform 0.18s, border 0.18s, background 0.22s;
+  min-height: 340px;
+  border: 1.5px solid #f0f0f0;
+  position: relative;
+  cursor: pointer;
+}
+
+.field-card:hover {
+  box-shadow: 0 24px 64px #00c85333, 0 8px 32px #ffd60033;
+  transform: translateY(-18px) scale(1.045) rotate(-1deg);
+  border-color: #ffd600;
+  background: linear-gradient(120deg, #fff 80%, #e0ffe0 100%);
+  filter: drop-shadow(0 0 16px #ffd60055);
+}
+
+/* Staggered animation cho field-card */
+@keyframes cardStaggerIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97) rotate(-2deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.04) rotate(1deg);
+  }
+
+  80% {
+    transform: translateY(2px) scale(1.01) rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+.field-card.stagger-animate {
+  animation: cardStaggerIn 0.55s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.field-card:hover .field-type-tag {
+  background: linear-gradient(10deg, #ffd600 60%, #b6ffb6 100%);
+  color: #222;
+  box-shadow: 0 4px 16px #ffd60033, 0 0 0 2px #fff8;
+  filter: brightness(1.08) drop-shadow(0 2px 8px #ffd60033);
+}
+
+.field-image-container {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.field-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1.5px solid #e0e0e0;
+  transition: transform 0.18s;
+}
+
+.field-card:hover .field-image {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 8px 24px #ffd60044;
+}
+
+.field-type-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(90deg, #00c853 70%, #b6ffb6 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.13rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(0, 200, 83, 0.10), 0 0 0 1.5px #fff8;
+  letter-spacing: 0.1px;
+  text-align: center;
+  min-width: unset;
+  min-height: unset;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  filter: blur(0) drop-shadow(0 1px 2px #00c85318);
+  transition: background 0.18s, box-shadow 0.18s, color 0.18s, height 0.18s, font-size 0.18s, padding 0.18s;
+  z-index: 2;
+}
+
+.field-card:hover .field-type-tag {
+  background: linear-gradient(90deg, #ffd600 70%, #b6ffb6 100%);
+  color: #222;
+  box-shadow: 0 4px 12px #ffd60022, 0 0 0 1.5px #fff8;
+  filter: brightness(1.08) drop-shadow(0 2px 8px #ffd60022);
+}
+
+@media (max-width: 600px) {
+  .field-type-tag {
+    font-size: 0.78rem;
+    height: 20px;
+    padding: 0.08rem 0.55rem;
+    left: 6px;
+    top: 6px;
+  }
+
+  .field-card {
+    min-height: 220px;
+    border-radius: 1rem;
+  }
+
+  .field-image-container {
+    height: 110px;
+  }
+
+  .field-info {
+    padding: 0.7rem 0.7rem 1rem 0.7rem;
+  }
+}
+
+/* Footer, Promotion, App, Reviews: giữ nguyên hoặc tinh chỉnh nhỏ cho padding/margin nếu cần */
+
+/* --- Animation Keyframes --- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.04);
+  }
+
+  80% {
+    transform: translateY(2px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.97);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(8px) scale(1.04);
+  }
+
+  80% {
+    transform: translateX(-2px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.97);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-8px) scale(1.04);
+  }
+
+  80% {
+    transform: translateX(2px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shakeY {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-4px);
+  }
+
+  40% {
+    transform: translateY(4px);
+  }
+
+  60% {
+    transform: translateY(-2px);
+  }
+
+  80% {
+    transform: translateY(2px);
+  }
+}
+
+/* --- Hero Section Animation --- */
+.hero {
+  animation: fadeInScale 0.7s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.hero h1,
+.hero p {
+  opacity: 0;
+  animation: fadeInUp 0.7s 0.15s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.18s;
+}
+
+.hero p {
+  animation-delay: 0.32s;
+}
+
+.search-bar {
+  opacity: 0;
+  animation: fadeInUp 0.7s 0.45s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+/* --- LoaiSan Grid Animation --- */
+.loaisan-item {
+  opacity: 0;
+  animation: fadeInScale 0.6s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.loaisan-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.loaisan-item:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.loaisan-item:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.loaisan-item:nth-child(4) {
+  animation-delay: 0.46s;
+}
+
+.loaisan-item:nth-child(5) {
+  animation-delay: 0.58s;
+}
+
+.loaisan-item:nth-child(6) {
+  animation-delay: 0.7s;
+}
+
+.loaisan-item:hover img {
+  animation: shakeY 0.5s;
+}
+
+/* --- Field Card Animation (staggered đã có) --- */
+.field-card.stagger-animate {
+  animation: cardStaggerIn 0.55s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+/* --- User Reviews Animation --- */
+.user-reviews-section {
+  animation: fadeInUp 0.7s 0.1s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.reviews-list .review-card {
+  opacity: 0;
+  animation: fadeInLeft 0.6s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.reviews-list .review-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.reviews-list .review-card:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.reviews-list .review-card:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.review-card:hover {
+  animation: popIn 0.4s;
+}
+
+.review-avatar {
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.review-card:hover .review-avatar {
+  animation: shakeY 0.5s;
+}
+
+/* --- Promotion Banner Animation --- */
+.promotion-section {
+  animation: fadeInRight 0.7s 0.1s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.promotion-banner img {
+  opacity: 0;
+  animation: fadeInScale 0.7s 0.18s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.promo-content {
+  opacity: 0;
+  animation: fadeInRight 0.7s 0.32s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.promotion-banner img:hover {
+  animation: popIn 0.4s;
+}
+
+/* --- App Feature Animation --- */
+.app-feature-section {
+  animation: fadeInUp 0.7s 0.1s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.app-feature-content img.app-mockup {
+  opacity: 0;
+  animation: fadeInLeft 0.7s 0.18s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.app-feature-content ul,
+.app-feature-content .app-download-links {
+  opacity: 0;
+  animation: fadeInRight 0.7s 0.32s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.app-feature-content img.app-mockup:hover {
+  animation: popIn 0.4s;
+}
+
+.app-download-links img:hover {
+  animation: shakeY 0.5s;
+}
+
+/* --- Footer Animation --- */
+.main-footer {
+  animation: fadeInUp 0.7s 0.2s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+.footer-logo {
+  opacity: 0;
+  animation: fadeInScale 0.7s 0.32s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.footer-column {
+  opacity: 0;
+  animation: fadeInLeft 0.7s cubic-bezier(.4, 2, .6, 1) forwards;
+}
+
+.footer-column:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.footer-column:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.footer-column:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.footer-column:nth-child(4) {
+  animation-delay: 0.46s;
+}
+
+.booking-history-container {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.no-bookings {
+  color: #4b5563;
+  font-style: italic;
+}
+
+.error {
+  padding: 1rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.loading {
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.booking-card {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.field-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.info {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+.status {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  color: #ca8a04;
+}
+
+.status.confirmed {
+  color: #16a34a;
+}
+
+.status.cancelled {
+  color: #dc2626;
+}
+
+@media (max-width: 640px) {
+  .heading {
+    font-size: 1.3rem;
+  }
+
+  .field-name {
+    font-size: 1.1rem;
+  }
+
+  .info {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Responsive: giữ nguyên các animation --- */
