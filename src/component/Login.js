@@ -70,7 +70,7 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.post("/auth/login", {
+      const response = await axios.post("https://sansieutoc-web-be.onrender.com/auth/login", {
         email: formData.email,
         password: formData.password,
       });
@@ -86,7 +86,7 @@ export default function Login() {
         setUser(userData);
         alert("Đăng nhập thành công!");
         if (userData.role === "manager") {
-           navigate("/manager/fields");
+          navigate("/manager/fields");
         } else if (userData.role === "admin") {
           navigate("/admin");
         } else {
