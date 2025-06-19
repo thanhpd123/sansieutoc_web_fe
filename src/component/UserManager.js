@@ -18,7 +18,7 @@ const UserManager = ({ user }) => {
 
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("https://sansieutoc-web-be.onrender.com/auth", {
+        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//auth", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setUsers(res.data);

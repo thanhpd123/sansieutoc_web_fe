@@ -22,7 +22,7 @@ export default function EditField({ user }) {
     if (!user) return;
 
     axios
-      .get(`https://sansieutoc-web-be.onrender.com/field/${id}`, {
+      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//field/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -46,7 +46,7 @@ export default function EditField({ user }) {
 
   useEffect(() => {
     axios
-      .get("https://sansieutoc-web-be.onrender.com/type")
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi khi load types:", err));
   }, []);
@@ -64,7 +64,7 @@ export default function EditField({ user }) {
       const formData = new FormData();
       formData.append("image", file);
 
-      const res = await axios.post("https://sansieutoc-web-be.onrender.com/upload", formData, {
+      const res = await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -113,7 +113,7 @@ export default function EditField({ user }) {
         pricePerHour: parseInt(formData.pricePerHour),
       };
 
-      await axios.put(`https://sansieutoc-web-be.onrender.com/field/${id}`, payload, {
+      await axios.put(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//field/${id}`, payload, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
 

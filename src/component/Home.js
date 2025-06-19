@@ -99,11 +99,11 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://sansieutoc-web-be.onrender.com/type")
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//type")
       .then((res) => setLoaiSans(res.data))
       .catch(console.error);
     axios
-      .get("https://sansieutoc-web-be.onrender.com/field")
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//field")
       .then((res) => setFields(res.data))
       .catch(console.error);
   }, []);
@@ -173,7 +173,7 @@ export default function Home() {
         </div>
         <nav className="menu">
           <Link to="/">Trang chủ</Link>
-          <Link to="/coach">Huấn Luyện Viên cá Nhân</Link>
+          <Link to="/coach">Huấn Luyện Viên Cá Nhân</Link>
           <Link to="#">Dụng Cụ Thể Thao</Link>
           <Link to="/coachbookinghistory">Lịch Đặt Huấn Luyện Viên</Link>
           <Link to="/lichsu-datsan">Lịch Sử</Link>
