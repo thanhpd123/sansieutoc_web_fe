@@ -16,7 +16,7 @@ const RevenueByField = ({ token, userId, startDate, endDate }) => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get(`https://sansieutoc-web-be.onrender.com/report/field`, {
+        const res = await axios.get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/report/field`, {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             ownerId: userId,

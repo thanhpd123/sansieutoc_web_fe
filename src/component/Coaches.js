@@ -14,7 +14,7 @@ const Coaches = () => {
     const fetchCoaches = async () => {
       try {
         // Gọi API GET /coach để lấy danh sách
-        const res = await axios.get("https://sansieutoc-web-be.onrender.com/coach");
+        const res = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/coach");
         setCoaches(res.data);
       } catch (err) {
         console.error("Error fetching coaches:", err);

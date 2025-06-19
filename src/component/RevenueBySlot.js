@@ -13,7 +13,7 @@ const RevenueBySlot = ({ token, startDate, endDate }) => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get("https://sansieutoc-web-be.onrender.com/report/slot", {
+        const res = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/report/slot", {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             ...(startDate && { from: startDate }),

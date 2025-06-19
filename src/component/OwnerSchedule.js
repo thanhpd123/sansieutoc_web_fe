@@ -18,7 +18,7 @@ const OwnerSchedule = ({ user }) => {
 
     const fetchBookings = async () => {
       try {
-        const res = await axios.get("https://sansieutoc-web-be.onrender.com/booking/owner", {
+        const res = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking/owner", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setBookings(res.data);

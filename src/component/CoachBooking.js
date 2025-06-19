@@ -40,7 +40,7 @@ const CoachBookingForm = () => {
   useEffect(() => {
     const fetchCoach = async () => {
       try {
-        const res = await axios.get(`https://sansieutoc-web-be.onrender.com/coach/${coachId}`);
+        const res = await axios.get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/coach/${coachId}`);
         setCoach(res.data);
       } catch (err) {
         console.error('Error fetching coach:', err);
@@ -95,7 +95,7 @@ const CoachBookingForm = () => {
     try {
       const payload = { coachId, date, startTime, endTime, totalPrice: Number(totalPrice) };
       await axios.post(
-        'https://sansieutoc-web-be.onrender.com/coachbooking',
+        'http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/coachbooking',
         payload,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

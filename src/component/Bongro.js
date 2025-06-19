@@ -98,14 +98,14 @@ const BongRo = () => {
   };
 
   useEffect(() => {
-    axios.get("https://sansieutoc-web-be.onrender.com/type")
+    axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/type")
       .then(res => setLoaiSans(res.data))
       .catch(() => setErrorLoaiSans("Không thể tải loại sân."))
       .finally(() => setLoadingLoaiSans(false));
   }, []);
 
   useEffect(() => {
-    axios.get("https://sansieutoc-web-be.onrender.com/field")
+    axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field")
       .then(res => setFields(res.data))
       .catch(() => setErrorFields("Không thể tải danh sách sân."))
       .finally(() => setLoadingFields(false));

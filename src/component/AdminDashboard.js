@@ -19,9 +19,9 @@ const AdminDashboard = ({ user }) => {
     const fetchDashboardData = async () => {
       try {
         const [fieldsRes, bookingsRes, managersRes] = await Promise.all([
-          axios.get("https://sansieutoc-web-be.onrender.com/field", { headers: { Authorization: `Bearer ${user.token}` } }),
-          axios.get("https://sansieutoc-web-be.onrender.com/booking/today-count", { headers: { Authorization: `Bearer ${user.token}` } }),
-          axios.get("https://sansieutoc-web-be.onrender.com/auth/count/manager", { headers: { Authorization: `Bearer ${user.token}` } }),
+          axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field", { headers: { Authorization: `Bearer ${user.token}` } }),
+          axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking/today-count", { headers: { Authorization: `Bearer ${user.token}` } }),
+          axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/auth/count/manager", { headers: { Authorization: `Bearer ${user.token}` } }),
         ]);
 
         setTotalFields(fieldsRes.data.length);

@@ -19,11 +19,11 @@ export default function CreateFieldAdmin({ user }) {
   });
 
   useEffect(() => {
-    axios.get("https://sansieutoc-web-be.onrender.com/type")
+    axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi load loại sân:", err));
 
-    axios.get("https://sansieutoc-web-be.onrender.com/auth/users?role=manager", {
+    axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/auth/users?role=manager", {
       headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => setOwners(res.data))
@@ -42,7 +42,7 @@ export default function CreateFieldAdmin({ user }) {
     for (const file of files) {
       const data = new FormData();
       data.append("image", file);
-      const res = await axios.post("https://sansieutoc-web-be.onrender.com/upload", data, {
+      const res = await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/upload", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (res.data.imageUrl) uploadedUrls.push(res.data.imageUrl);
@@ -71,7 +71,7 @@ export default function CreateFieldAdmin({ user }) {
         ...formData,
         pricePerHour: parseInt(formData.pricePerHour),
       };
-      await axios.post("https://sansieutoc-web-be.onrender.com/field", payload, {
+      await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field", payload, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       alert("Tạo sân thành công!");

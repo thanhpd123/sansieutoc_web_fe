@@ -32,7 +32,7 @@ const BookingHistory = () => {
       if (!user?.token) return;
 
       try {
-        const res = await axios.get('https://sansieutoc-web-be.onrender.com/booking', {
+        const res = await axios.get('http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setBookings(res.data.bookings || []);

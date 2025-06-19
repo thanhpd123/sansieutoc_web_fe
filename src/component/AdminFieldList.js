@@ -20,10 +20,10 @@ const AdminFieldList = ({ user }) => {
     const fetchData = async () => {
       try {
         const [fieldRes, bookingRes] = await Promise.all([
-          axios.get("https://sansieutoc-web-be.onrender.com/field/admin", {
+          axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/admin", {
             headers: { Authorization: `Bearer ${user.token}` },
           }),
-          axios.get("https://sansieutoc-web-be.onrender.com/booking/admin/bookings", {
+          axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking/admin/bookings", {
             headers: { Authorization: `Bearer ${user.token}` },
           }),
         ]);

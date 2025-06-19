@@ -70,7 +70,7 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.post("https://sansieutoc-web-be.onrender.com/auth/login", {
+      const response = await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/auth/login", {
         email: formData.email,
         password: formData.password,
       });
@@ -122,7 +122,7 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.post("https://sansieutoc-web-be.onrender.com/auth/register", {
+      const response = await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/auth/register", {
         name,
         email,
         password,

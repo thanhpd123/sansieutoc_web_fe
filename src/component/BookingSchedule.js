@@ -20,7 +20,7 @@ const BookingSchedule = ({ user }) => {
 
     const fetchBookings = async () => {
       try {
-        const res = await axios.get("https://sansieutoc-web-be.onrender.com/booking/admin", {
+        const res = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking/admin", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         const data = res.data.bookings || res.data;
@@ -152,10 +152,10 @@ const BookingSchedule = ({ user }) => {
             <span>{booking.userId?.name || "Không rõ"}</span>
             <span
               className={`status-label ${booking.status === "confirmed"
-                  ? "booked"
-                  : booking.status === "cancelled"
-                    ? "cancelled"
-                    : "available"
+                ? "booked"
+                : booking.status === "cancelled"
+                  ? "cancelled"
+                  : "available"
                 }`}
             >
               {booking.status === "confirmed"

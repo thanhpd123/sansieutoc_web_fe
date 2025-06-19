@@ -12,7 +12,7 @@ const RevenueByBranch = ({ token, userId, startDate, endDate }) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://sansieutoc-web-be.onrender.com/report/owner", {
+        const response = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/report/owner", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
