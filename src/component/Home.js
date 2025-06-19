@@ -173,7 +173,7 @@ export default function Home() {
         </div>
         <nav className="menu">
           <Link to="/">Trang chủ</Link>
-          <Link to="/coach">Huấn luyện viên cá nhân</Link>
+          <Link to="/coach">Huấn Luyện Viên cá Nhân</Link>
           <Link to="#">Dụng Cụ Thể Thao</Link>
           <Link to="/coachbookinghistory">Lịch Đặt Huấn Luyện Viên</Link>
           <Link to="/lichsu-datsan">Lịch Sử</Link>
