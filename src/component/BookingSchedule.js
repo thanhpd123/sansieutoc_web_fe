@@ -20,7 +20,7 @@ const BookingSchedule = ({ user }) => {
 
     const fetchBookings = async () => {
       try {
-        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//booking/admin", {
+        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/admin", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         const data = res.data.bookings || res.data;

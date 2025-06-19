@@ -16,7 +16,7 @@ const RevenueByField = ({ token, userId, startDate, endDate }) => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//report/field`, {
+        const res = await axios.get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/report/field`, {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             ownerId: userId,

@@ -13,7 +13,7 @@ const RevenueBySlot = ({ token, startDate, endDate }) => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//report/slot", {
+        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/report/slot", {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             ...(startDate && { from: startDate }),

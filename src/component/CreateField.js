@@ -18,7 +18,7 @@ export default function CreateField({ user }) {
 
   useEffect(() => {
     axios
-      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//type")
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi load loại sân:", err));
   }, []);
@@ -36,7 +36,7 @@ export default function CreateField({ user }) {
       const formData = new FormData();
       formData.append("image", file);
 
-      const res = await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//upload", formData, {
+      const res = await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -72,7 +72,7 @@ export default function CreateField({ user }) {
         pricePerHour: parseInt(formData.pricePerHour),
       };
 
-      await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//field", payload);
+      await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field", payload);
       alert("Tạo sân thành công!");
       navigate("/manager/fields");
     } catch (err) {

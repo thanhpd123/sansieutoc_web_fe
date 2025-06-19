@@ -18,7 +18,7 @@ const OwnerSchedule = ({ user }) => {
 
     const fetchBookings = async () => {
       try {
-        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn//booking/owner", {
+        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/owner", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setBookings(res.data);
