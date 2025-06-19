@@ -12,7 +12,7 @@ const OwnerManager = ({ user }) => {
 
   useEffect(() => {
     axios
-      .get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/auth/users?role=manager", {
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/auth/users?role=manager", {
         headers: { Authorization: `Bearer ${user.token}` },
       })
       .then((res) => {

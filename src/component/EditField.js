@@ -22,7 +22,7 @@ export default function EditField({ user }) {
     if (!user) return;
 
     axios
-      .get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/${id}`, {
+      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -46,7 +46,7 @@ export default function EditField({ user }) {
 
   useEffect(() => {
     axios
-      .get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/type")
+      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/type")
       .then((res) => setTypes(res.data))
       .catch((err) => console.error("Lỗi khi load types:", err));
   }, []);
@@ -64,7 +64,7 @@ export default function EditField({ user }) {
       const formData = new FormData();
       formData.append("image", file);
 
-      const res = await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/upload", formData, {
+      const res = await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -113,7 +113,7 @@ export default function EditField({ user }) {
         pricePerHour: parseInt(formData.pricePerHour),
       };
 
-      await axios.put(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/${id}`, payload, {
+      await axios.put(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/${id}`, payload, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
 

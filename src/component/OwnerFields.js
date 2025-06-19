@@ -14,7 +14,7 @@ const OwnerFields = ({ user }) => {
 
     const fetchFields = async () => {
       try {
-        const res = await axios.get("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/owner", {
+        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/owner", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setFields(res.data);
@@ -39,7 +39,7 @@ const OwnerFields = ({ user }) => {
   const handleDeleteClick = async (id) => {
     if (!window.confirm("Bạn có chắc chắn muốn xoá sân này?")) return;
     try {
-      await axios.delete(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/${id}`, {
+      await axios.delete(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setFields(fields.filter((f) => f._id !== id));

@@ -49,7 +49,7 @@ const Booking = () => {
   useEffect(() => {
     const fetchField = async () => {
       try {
-        const res = await axios.get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/field/${fieldId}`);
+        const res = await axios.get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/${fieldId}`);
         setField(res.data);
       } catch (err) {
         setMessage("Không tìm thấy thông tin sân.");
@@ -62,7 +62,7 @@ const Booking = () => {
 
   useEffect(() => {
     axios
-      .get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/fieldunit/`)
+      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/fieldunit/`)
       .then((res) => setFieldUnits(res.data))
       .catch(() => setFieldUnits([]));
   }, []);
@@ -70,7 +70,7 @@ const Booking = () => {
   useEffect(() => {
     if (!fieldId || !formData.date) return;
     axios
-      .get(`http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking`)
+      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking`)
       .then((res) => setBookedSlots(res.data.bookings || []))
       .catch(() => setBookedSlots([]));
   }, [fieldId, formData.date]);
@@ -194,7 +194,7 @@ const Booking = () => {
       });
 
       for (const payload of bookings) {
-        await axios.post("http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/booking", payload, {
+        await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking", payload, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
       }

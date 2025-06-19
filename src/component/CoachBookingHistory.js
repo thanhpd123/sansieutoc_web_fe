@@ -10,7 +10,7 @@ const CoachBookingHistory = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://zkoo0400gsgowowok84o8cck.185.210.144.237.sslip.io/coachbooking/user', {
+        const response = await axios.get('https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/coachbooking/user', {
           headers: {
             Authorization: `Bearer ${JSON.parse(localStorage.getItem('userData'))?.token}`,
 
