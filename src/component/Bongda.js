@@ -143,9 +143,16 @@ const Bongda = () => {
     <div className="font-sans">
       {/* Navbar */}
       <header className="navbar">
-        <div className="logo" style={{ cursor: "pointer" }}>
-          <span className="green-text">Sân</span>
-          <span className="white-text">SiêuTốc ⚡</span>
+        <div
+          className="logo"
+          style={{ cursor: "pointer" }}
+        >
+          <img
+            src="/images/logo_sansieutoc.png"
+            alt="Sân Siêu Tốc Logo"
+            className="footer-logo"
+            style={{ height: 50, width: "auto", objectFit: "contain", maxWidth: 160 }}
+          />
         </div>
 
         <nav className="menu">

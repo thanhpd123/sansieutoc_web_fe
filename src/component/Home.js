@@ -174,9 +174,9 @@ export default function Home() {
         <nav className="menu">
           <Link to="/">Trang chủ</Link>
           <Link to="/coach">Huấn luyện viên cá nhân</Link>
-          <Link to="#">Dụng cụ thể thao</Link>
+          <Link to="#">Dụng Cụ Thể Thao</Link>
           <Link to="/coachbookinghistory">Lịch Đặt Huấn Luyện Viên</Link>
-          <Link to="/lichsu-datsan">Lịch sử</Link>
+          <Link to="/lichsu-datsan">Lịch Sử</Link>
         </nav>
         <div className="auth-search">
           {user ? (
@@ -341,36 +341,36 @@ export default function Home() {
           <div className="reviews-list">
             <div className="review-card">
               <img
-                src="/images/user.jpg"
+                src="/images/user1.png"
                 alt="user1"
                 className="review-avatar"
               />
               <div>
-                <strong>Nguyễn Văn A</strong>
+                <strong>Nguyễn Văn Hải</strong>
                 <p>"Sân đẹp, đặt sân cực nhanh, giá hợp lý. Sẽ quay lại!"</p>
                 <span>⭐⭐⭐⭐⭐</span>
               </div>
             </div>
             <div className="review-card">
               <img
-                src="/images/user.jpg"
+                src="/images/user2.jpg"
                 alt="user2"
                 className="review-avatar"
               />
               <div>
-                <strong>Trần Thị B</strong>
+                <strong>Trần Thị Mai</strong>
                 <p>"Ứng dụng dễ dùng, nhiều lựa chọn sân gần nhà."</p>
                 <span>⭐⭐⭐⭐⭐</span>
               </div>
             </div>
             <div className="review-card">
               <img
-                src="/images/user.jpg"
+                src="/images/user3.jpg"
                 alt="user3"
                 className="review-avatar"
               />
               <div>
-                <strong>Lê Văn C</strong>
+                <strong>Lê Văn Lương</strong>
                 <p>"Tôi rất hài lòng với dịch vụ chăm sóc khách hàng."</p>
                 <span>⭐⭐⭐⭐⭐</span>
               </div>
