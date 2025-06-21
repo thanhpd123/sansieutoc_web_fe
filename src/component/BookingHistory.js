@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import "../Home.css";
 
-
 const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
   const [error, setError] = useState('');
@@ -50,6 +49,26 @@ const BookingHistory = () => {
   if (loading) return <p className="loading">Đang tải lịch sử đặt sân...</p>;
   if (error) return <p className="error">{error}</p>;
 
+  const handleCancelBooking = async (bookingId) => {
+    if (!window.confirm("Bạn chắc chắn muốn hủy lượt đặt sân này?")) return;
+    try {
+
+await axios.patch(
+  `https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/${bookingId}/cancel`,
+  {},
+  { headers: { Authorization: `Bearer ${user.token}` } }
+);
+// ...existing code...
+      setBookings((prev) =>
+        prev.map((b) =>
+          b._id === bookingId ? { ...b, status: "cancelled" } : b
+        )
+      );
+    } catch (err) {
+      alert("Không thể hủy đặt sân. Vui lòng thử lại sau.");
+    }
+  };
+
   return (
     <div className="font-sans">
       {/* Header giống Home */}
@@ -78,9 +97,7 @@ const BookingHistory = () => {
           <Link to="/coachbookinghistory">Lịch Đặt Huấn Luyện Viên</Link>
           <Link to="/lichsu-datsan">Lịch sử</Link>
         </nav>
-        <div className="auth-search">
-          {/* Nếu có logic đăng nhập/đăng xuất thì thêm ở đây */}
-        </div>
+        <div className="auth-search"></div>
       </header>
 
       {/* Banner Premium giữ nguyên */}
@@ -148,7 +165,6 @@ const BookingHistory = () => {
       </section>
 
       <div className="booking-history-container">
-
         {bookings.length === 0 ? (
           <p className="no-bookings">Bạn chưa có lượt đặt sân nào.</p>
         ) : (
@@ -173,6 +189,15 @@ const BookingHistory = () => {
                   {booking.status}
                 </span>
               </p>
+              {/* Nút hủy sân */}
+              {booking.status !== "cancelled" && (
+                <button
+                  className="cancel-btn"
+                  onClick={() => handleCancelBooking(booking._id)}
+                >
+                  Hủy sân
+                </button>
+              )}
             </div>
           ))
         )}
@@ -338,6 +363,21 @@ const BookingHistory = () => {
         .booking-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .cancel-btn {
+          background: #dc2626;
+          color: #fff;
+          border: none;
+          padding: 7px 18px;
+          border-radius: 5px;
+          font-weight: 500;
+          margin-top: 8px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .cancel-btn:hover {
+          background: #b91c1c;
         }
 
         .field-name {

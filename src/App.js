@@ -4,6 +4,9 @@ import Home from './component/Home';
 import Bongda from "./component/Bongda";
 import Bongro from "./component/Bongro";
 import Tennis from "./component/Tennis";
+import Caulong from "./component/Caulong";
+import Bongchuyen from "./component/Bongchuyen";
+import Pickleball  from "./component/Pickleball";
 import Login from "./component/Login";
 import Booking from "./component/Booking"
 import BookingHistory from './component/BookingHistory';
@@ -39,6 +42,9 @@ function App() {
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d0" element={<Bongda />} />
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d1" element={<Bongro />} />
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d2" element={<Tennis />} />
+      <Route path="/loaisan/6836d3231f7f6d0deb0f98d4" element={<Caulong />} />
+       <Route path="/loaisan/6836d3231f7f6d0deb0f98d5" element={<Bongchuyen />} />
+        <Route path="/loaisan/6836d3231f7f6d0deb0f98d3" element={<Pickleball />} />
       <Route path="/register" element={<Login />} />
       <Route path="/login" element={<Login />} />
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../main/Home.css";
+import "../main/Booking.css";
 import SuccessBookingInfo from "./SuccessBookingInfo";
 
 const fixedSlots = [
@@ -66,14 +67,13 @@ const Booking = () => {
       .then((res) => setFieldUnits(res.data))
       .catch(() => setFieldUnits([]));
   }, []);
-
-  useEffect(() => {
-    if (!fieldId || !formData.date) return;
-    axios
-      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking`)
-      .then((res) => setBookedSlots(res.data.bookings || []))
-      .catch(() => setBookedSlots([]));
-  }, [fieldId, formData.date]);
+useEffect(() => {
+  if (!fieldId || !formData.date) return;
+  axios
+    .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/schedule?fieldId=${fieldId}&date=${formData.date}`)
+    .then((res) => setBookedSlots(res.data.bookings || []))
+    .catch(() => setBookedSlots([]));
+}, [fieldId, formData.date]);
 
   useEffect(() => {
     if (selected.length > 0 && field) {
