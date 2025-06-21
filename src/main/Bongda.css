@@ -90,9 +90,16 @@ main {
     background-color: #e6ede6; /* Màu xám nhạt */
     /* min-height có thể cần điều chỉnh nếu bạn có thanh footer cố định */
 }
+/* hoặc file css bạn đang import cho Bongda */
 
-/*
-Để sticky hoạt động tốt, các phần tử cha của .yellow-strip (ví dụ: main hoặc content-wrapper)
-không nên có overflow: hidden, overflow: scroll, hoặc overflow: auto.
-Đảm bảo thẻ body hoặc html có chiều cao đủ lớn (min-height: 100vh).
-*/
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+  gap: 30px;
+  width: 100%;
+  max-width: 1150px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 32px 0;
+  justify-items: center; /* căn giữa các card trong cột */
+}
