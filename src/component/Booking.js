@@ -4,15 +4,22 @@ import axios from "axios";
 import "../main/Home.css";
 import "../main/Booking.css";
 import SuccessBookingInfo from "./SuccessBookingInfo";
-
+import "../main/Booking.css";
 const fixedSlots = [
-  { start: "07:00", end: "09:00" },
+  { start: "07:00", end: "08:00" },
+  { start: "08:00", end: "09:00" },
   { start: "09:00", end: "10:00" },
+  { start: "10:00", end: "11:00" },
   { start: "11:00", end: "12:00" },
-  { start: "13:00", end: "15:00" },
-  { start: "15:00", end: "17:00" },
-  { start: "17:00", end: "19:00" },
-  { start: "19:00", end: "21:00" },
+  { start: "12:00", end: "13:00" },
+  { start: "13:00", end: "14:00" },
+  { start: "14:00", end: "15:00" },
+  { start: "15:00", end: "16:00" },
+  { start: "16:00", end: "17:00" },
+  { start: "17:00", end: "18:00" },
+  { start: "18:00", end: "19:00" },
+  { start: "19:00", end: "20:00" },
+  { start: "20:00", end: "21:00" },
   { start: "21:00", end: "22:00" },
 ];
 
@@ -539,269 +546,7 @@ useEffect(() => {
           </div>
         </footer>
       </main>
-      <style>
-        {`
-        .booking-table-wrapper {
-          overflow-x: auto;
-          margin-bottom: 16px;
-        }
-        .booking-table {
-          width: 100%;
-          border-collapse: collapse;
-          text-align: center;
-        }
-        .booking-table th, .booking-table td {
-          border: 1px solid #ddd;
-          padding: 6px 4px;
-        }
-        .unit-btn-table.selected {
-          background: #2ecc40;
-          color: #fff;
-        }
-        .unit-btn-table.booked {
-          background: #ccc;
-          color: #888;
-          cursor: not-allowed;
-        }
-        .unit-btn-table {
-          min-width: 60px;
-          padding: 4px 0;
-          border: none;
-          background: #eee;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        body {
-          background: linear-gradient(120deg, #e0ffe8 0%, #f6f8fa 100%);
-        }
-            html, body, #root, .page-wrapper {
-        height: 100%;
-        min-height: 100vh;
-      }
-      .page-wrapper {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-      .content-wrapper {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-      }
-      .main-footer {
-        flex-shrink: 0;
-      }
-        .booking-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: transparent;
-  padding: 24px 0 0 0;
-  
-}
-        .booking-card {
-          background: #fff;
-          border-radius: 22px;
-          box-shadow: 0 8px 32px rgba(26,127,55,0.13), 0 1.5px 6px rgba(44,204,64,0.07);
-          padding: 38px 38px 28px 38px;
-          max-width: 950px;
-          width: 100%;
-          margin: 0 auto;
-          transition: box-shadow 0.2s;
-        }
-        .booking-card:hover {
-          box-shadow: 0 12px 40px rgba(26,127,55,0.18), 0 2px 8px rgba(44,204,64,0.10);
-        }
-        .booking-field-info {
-          display: flex;
-          gap: 36px;
-          align-items: flex-start;
-          margin-bottom: 36px;
-        }
-        .booking-image img, .booking-image .no-image {
-          width: 250px;
-          height: 170px;
-          object-fit: cover;
-          border-radius: 16px;
-          background: linear-gradient(135deg, #e0ffe8 0%, #eaeaea 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.15rem;
-          color: #888;
-          box-shadow: 0 2px 12px rgba(44,204,64,0.08);
-        }
-        .booking-field-details {
-          flex: 1;
-        }
-        .booking-title {
-          font-size: 2.2rem;
-          font-weight: bold;
-          margin-bottom: 10px;
-          color: #1a7f37;
-          letter-spacing: 1px;
-        }
-        .booking-address {
-          color: #555;
-          margin-bottom: 8px;
-          font-size: 1.08rem;
-        }
-        .booking-type, .booking-price {
-          margin-bottom: 7px;
-          color: #222;
-          font-size: 1.08rem;
-        }
-        .booking-form-section {
-          margin-top: 16px;
-        }
-        .booking-user {
-          font-size: 1.13rem;
-          margin-bottom: 12px;
-          color: #1a7f37;
-        }
-        .booking-form {
-          margin-top: 10px;
-        }
-        .form-group {
-          margin-bottom: 20px;
-        }
-        .form-group label {
-          font-weight: 600;
-          margin-bottom: 5px;
-          display: block;
-          color: #1a7f37;
-        }
-        .booking-table-wrapper {
-          overflow-x: auto;
-          margin-bottom: 18px;
-        }
-        .booking-table {
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0;
-          text-align: center;
-          background: #fafdff;
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: 0 2px 8px rgba(44,204,64,0.07);
-        }
-        .booking-table th, .booking-table td {
-          border: 1px solid #e0e0e0;
-          padding: 10px 6px;
-        }
-        .booking-table th {
-          background: linear-gradient(90deg, #e9f5ee 60%, #d0f5e2 100%);
-          color: #1a7f37;
-          font-weight: 700;
-          font-size: 1.08rem;
-        }
-        .unit-btn-table.selected {
-          background: linear-gradient(90deg, #1a7f37 60%, #2ecc40 100%);
-          color: #fff;
-          font-weight: bold;
-          border: 2px solid #1a7f37;
-          box-shadow: 0 2px 8px rgba(44,204,64,0.10);
-          transform: scale(1.06);
-        }
-        .unit-btn-table.booked {
-          background: #e0e0e0;
-          color: #888;
-          cursor: not-allowed;
-          border: 2px solid #e0e0e0;
-          text-decoration: line-through;
-        }
-        .unit-btn-table {
-          min-width: 80px;
-          padding: 10px 0;
-          border: 2px solid #d0e6d7;
-          background: #f6f8fa;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.18s;
-          font-size: 1.07rem;
-          font-family: inherit;
-          font-weight: 500;
-          outline: none;
-        }
-        .unit-btn-table:not(.booked):hover {
-          background: linear-gradient(90deg, #b6f5c1 60%, #e0ffe8 100%);
-          border-color: #1a7f37;
-          color: #1a7f37;
-          box-shadow: 0 2px 8px rgba(44,204,64,0.13);
-          transform: scale(1.04);
-        }
-        .booking-total {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: #1a7f37;
-          letter-spacing: 0.5px;
-        }
-        .booking-submit-btn {
-          background: linear-gradient(90deg, #1a7f37 60%, #2ecc40 100%);
-          color: #fff;
-          border: none;
-          border-radius: 8px;
-          padding: 14px 44px;
-          font-size: 1.13rem;
-          font-weight: bold;
-          cursor: pointer;
-          margin-top: 12px;
-          box-shadow: 0 2px 8px rgba(26,127,55,0.10);
-          transition: background 0.2s, transform 0.15s;
-          letter-spacing: 0.5px;
-        }
-        .booking-submit-btn:hover {
-          background: linear-gradient(90deg, #2ecc40 60%, #1a7f37 100%);
-          transform: scale(1.04);
-        }
-        .booking-message {
-          margin-top: 16px;
-          font-size: 1.08rem;
-          color: #e74c3c;
-          font-weight: 500;
-        }
-        .booking-login-reminder {
-          background: #fffbe6;
-          border: 1.5px solid #ffe58f;
-          padding: 22px;
-          border-radius: 10px;
-          margin-top: 22px;
-          text-align: center;
-          font-size: 1.08rem;
-        }
-        .booking-login-btn {
-          background: linear-gradient(90deg, #1a7f37 60%, #2ecc40 100%);
-          color: #fff;
-          border: none;
-          border-radius: 6px;
-          padding: 10px 28px;
-          font-size: 1.07rem;
-          margin-top: 12px;
-          cursor: pointer;
-          font-weight: 600;
-          transition: background 0.2s, transform 0.15s;
-        }
-        .booking-login-btn:hover {
-          background: linear-gradient(90deg, #2ecc40 60%, #1a7f37 100%);
-          transform: scale(1.04);
-        }
-        @media (max-width: 900px) {
-          .booking-card {
-            padding: 18px 6px 18px 6px;
-          }
-          .booking-field-info {
-            flex-direction: column;
-            gap: 14px;
-            align-items: stretch;
-          }
-          .booking-image img, .booking-image .no-image {
-            width: 100%;
-            height: 180px;
-          }
-        }
-       
-        `}
-      </style>
+    
     </div>
   );
 };
