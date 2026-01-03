@@ -18,7 +18,7 @@ const UserManager = ({ user }) => {
 
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/auth", {
+        const res = await axios.get("http://localhost:5000/auth", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setUsers(res.data);

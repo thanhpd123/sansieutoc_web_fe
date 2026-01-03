@@ -13,8 +13,8 @@ const CompareRevenue = () => {
       try {
         const res = await axios.get(
           type === "month"
-            ? `https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/report/compare/month?year=${year}`
-            : `https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/report/compare/year`
+            ? `http://localhost:5000/report/compare/month?year=${year}`
+            : `http://localhost:5000/report/compare/year`
         );
 
         const formatted = res.data.map((item) => ({

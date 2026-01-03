@@ -57,7 +57,7 @@ const Booking = () => {
   useEffect(() => {
     const fetchField = async () => {
       try {
-        const res = await axios.get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field/${fieldId}`);
+        const res = await axios.get(`http://localhost:5000/field/${fieldId}`);
         setField(res.data);
       } catch (err) {
         setMessage("Không tìm thấy thông tin sân.");
@@ -70,17 +70,17 @@ const Booking = () => {
 
   useEffect(() => {
     axios
-      .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/fieldunit/`)
+      .get(`http://localhost:5000/fieldunit/`)
       .then((res) => setFieldUnits(res.data))
       .catch(() => setFieldUnits([]));
   }, []);
-useEffect(() => {
-  if (!fieldId || !formData.date) return;
-  axios
-    .get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/schedule?fieldId=${fieldId}&date=${formData.date}`)
-    .then((res) => setBookedSlots(res.data.bookings || []))
-    .catch(() => setBookedSlots([]));
-}, [fieldId, formData.date]);
+  useEffect(() => {
+    if (!fieldId || !formData.date) return;
+    axios
+      .get(`http://localhost:5000/booking/schedule?fieldId=${fieldId}&date=${formData.date}`)
+      .then((res) => setBookedSlots(res.data.bookings || []))
+      .catch(() => setBookedSlots([]));
+  }, [fieldId, formData.date]);
 
   useEffect(() => {
     if (selected.length > 0 && field) {
@@ -201,7 +201,7 @@ useEffect(() => {
       });
 
       for (const payload of bookings) {
-        await axios.post("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking", payload, {
+        await axios.post("http://localhost:5000/booking", payload, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
       }
@@ -546,7 +546,7 @@ useEffect(() => {
           </div>
         </footer>
       </main>
-    
+
     </div>
   );
 };

@@ -31,7 +31,7 @@ const BookingHistory = () => {
       if (!user?.token) return;
 
       try {
-        const res = await axios.get('https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking', {
+        const res = await axios.get('http://localhost:5000/booking', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setBookings(res.data.bookings || []);
@@ -53,12 +53,12 @@ const BookingHistory = () => {
     if (!window.confirm("Bạn chắc chắn muốn hủy lượt đặt sân này?")) return;
     try {
 
-await axios.patch(
-  `https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/booking/${bookingId}/cancel`,
-  {},
-  { headers: { Authorization: `Bearer ${user.token}` } }
-);
-// ...existing code...
+      await axios.patch(
+        `http://localhost:5000/booking/${bookingId}/cancel`,
+        {},
+        { headers: { Authorization: `Bearer ${user.token}` } }
+      );
+      // ...existing code...
       setBookings((prev) =>
         prev.map((b) =>
           b._id === bookingId ? { ...b, status: "cancelled" } : b

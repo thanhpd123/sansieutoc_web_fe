@@ -97,14 +97,14 @@ const Pickleball = () => {
   };
 
   useEffect(() => {
-    axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/type")
+    axios.get("http://localhost:5000/type")
       .then(res => setLoaiSans(res.data))
       .catch(() => setErrorLoaiSans("Không thể tải loại sân."))
       .finally(() => setLoadingLoaiSans(false));
   }, []);
 
   useEffect(() => {
-    axios.get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field")
+    axios.get("http://localhost:5000/field")
       .then(res => setFields(res.data))
       .catch(() => setErrorFields("Không thể tải danh sách sân."))
       .finally(() => setLoadingFields(false));

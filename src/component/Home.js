@@ -99,11 +99,11 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/type")
+      .get("http://localhost:5000/type")
       .then((res) => setLoaiSans(res.data))
       .catch(console.error);
     axios
-      .get("https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/field")
+      .get("http://localhost:5000/field")
       .then((res) => setFields(res.data))
       .catch(console.error);
   }, []);

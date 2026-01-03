@@ -40,7 +40,7 @@ const CoachBookingForm = () => {
   useEffect(() => {
     const fetchCoach = async () => {
       try {
-        const res = await axios.get(`https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/coach/${coachId}`);
+        const res = await axios.get(`http://localhost:5000/coach/${coachId}`);
         setCoach(res.data);
       } catch (err) {
         console.error('Error fetching coach:', err);
@@ -95,7 +95,7 @@ const CoachBookingForm = () => {
     try {
       const payload = { coachId, date, startTime, endTime, totalPrice: Number(totalPrice) };
       await axios.post(
-        'https://zkoo0400gsgowowok84o8cck.qroma.tinkering.vn/coachbooking',
+        'http://localhost:5000/coachbooking',
         payload,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
