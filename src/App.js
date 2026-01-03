@@ -1,30 +1,58 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
-import Home from './component/Home';
-import Bongda from "./component/Bongda";
-import Bongro from "./component/Bongro";
-import Tennis from "./component/Tennis";
-import Caulong from "./component/Caulong";
-import Bongchuyen from "./component/Bongchuyen";
-import Pickleball  from "./component/Pickleball";
-import Login from "./component/Login";
-import Booking from "./component/Booking"
-import BookingHistory from './component/BookingHistory';
-import Coaches from './component/Coaches';
-import CoachBooking from './component/CoachBooking';
-import CoachBookingHistory from './component/CoachBookingHistory';
-import OwnerFields from './component/OwnerFields';
-import CreateField from './component/CreateField';
-import EditField from './component/EditField';
-import OwnerSchedule from './component/OwnerSchedule';
-import RevenueReport from './component/RevenueReport';
-import CompareRevenue from './component/CompareRevenue';
-import AdminDashboard from './component/AdminDashboard';
-import AdminFieldList from './component/AdminFieldList';
-import CreateFieldAdmin from './component/CreateFieldAdmin';
-import OwnerManager from './component/OwnerManager';
-import UserManager from './component/UserManager';
-import BookingSchedule from './component/BookingSchedule';
+
+// Pages
+import { Home } from './pages';
+
+// Auth Components
+import { Login } from './components/auth';
+
+// Field Components (loại sân)
+import {
+  Football as Bongda,
+  Basketball as Bongro,
+  Tennis,
+  Badminton as Caulong,
+  Volleyball as Bongchuyen,
+  Pickleball
+} from './components/fields';
+
+// Booking Components  
+import {
+  Booking,
+  BookingHistory,
+  BookingSchedule
+} from './components/booking';
+
+// Coach Components
+import {
+  Coaches,
+  CoachBooking,
+  CoachBookingHistory
+} from './components/coach';
+
+// Owner Components
+import {
+  OwnerFields,
+  OwnerSchedule,
+  CreateField,
+  EditField
+} from './components/owner';
+
+// Revenue Components
+import {
+  RevenueReport,
+  CompareRevenue
+} from './components/revenue';
+
+// Admin Components
+import {
+  AdminDashboard,
+  AdminFieldList,
+  CreateFieldAdmin,
+  OwnerManager,
+  UserManager
+} from './components/admin';
 
 function App() {
 
@@ -43,8 +71,8 @@ function App() {
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d1" element={<Bongro />} />
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d2" element={<Tennis />} />
       <Route path="/loaisan/6836d3231f7f6d0deb0f98d4" element={<Caulong />} />
-       <Route path="/loaisan/6836d3231f7f6d0deb0f98d5" element={<Bongchuyen />} />
-        <Route path="/loaisan/6836d3231f7f6d0deb0f98d3" element={<Pickleball />} />
+      <Route path="/loaisan/6836d3231f7f6d0deb0f98d5" element={<Bongchuyen />} />
+      <Route path="/loaisan/6836d3231f7f6d0deb0f98d3" element={<Pickleball />} />
       <Route path="/register" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
